@@ -77,8 +77,8 @@ def validate(run_tests=True):
             raise ValueError('Missing ' + name)
     plugin = json.loads((ROOT / 'plugin.json').read_text())
     skill_text = (SKILL / 'SKILL.md').read_text()
-    if plugin['name'] != 'beyondartist' or plugin['version'] != '1.0.0' or 'version: "1.0.0"' not in skill_text:
-        raise ValueError('First public release metadata must be 1.0.0.')
+    if plugin['name'] != 'beyondartist' or plugin['version'] != '1.0.1' or 'version: "1.0.1"' not in skill_text:
+        raise ValueError('Release metadata must agree at 1.0.1.')
     description = re.search(r'^description: (.+)$', skill_text, re.M)[1]
     if len(description) > 200:
         raise ValueError('Portable skill description exceeds 200 characters.')
@@ -112,7 +112,7 @@ def validate(run_tests=True):
     subprocess.run([sys.executable, str(SKILL / 'scripts/retrieve_library.py'), '--validate-index'], check=True)
     if run_tests:
         subprocess.run([sys.executable,'-m','unittest','discover','-s',str(SKILL / 'tests'),'-p','test_*.py'], check=True)
-    return {'version':'1.0.0','files':len(paths),'showcase_artworks':16,'identity_banner':1,
+    return {'version':'1.0.1','files':len(paths),'showcase_artworks':16,'identity_banner':1,
             'local_links_checked':checked,'private_marker_scan':'passed',
             'shared_index':'valid','tests':'run' if run_tests else 'not-repeated'}
 

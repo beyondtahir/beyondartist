@@ -3,7 +3,7 @@ name: beyondartist
 description: Art direct and create original YouTube thumbnails, thumbnail redesigns, Instagram carousels and social posts using category research, an offline design library and image-led creation.
 metadata:
   author: Beyond Tahir
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # BeyondArtist — by Beyond Tahir
@@ -72,14 +72,14 @@ The artist's priorities are **meaning/emotion → original concept and art form 
 
 ## Create through the strongest available medium
 
-Inspect available tools and use their relevant host skills. For new visual creation and redesigns, prioritize:
+Discover the host's actual image-generation and editing tools before choosing a creation route. Use relevant host skills to operate them; a skill's presence or the chat model's name does not establish image-model access. For new visual creation and redesigns, follow this order:
 
-1. A strong image-generation model for portrait recreation, artistic scenes, motifs and the final composition.
-2. Advanced visual design/composition capability when generation is unavailable, or to strengthen generated work.
-3. An intelligent combination: generated artistic composition with precise native text/logo finishing where useful.
-4. SVG or layout-only construction only when proper image creation/visual rendering is unavailable, or for an explicitly requested bounded edit/vector deliverable. It must not become the default substitute for image-led art direction.
+1. **Native image model first.** Choose the strongest accessible native image model suited to the brief, references, identity, art form and output requirements. Respect the user's model choice and authorized budget; do not hardcode a vendor or equate newest/most expensive with best.
+2. **Connected image models next.** If native image creation is unavailable or cannot satisfy a required capability, inspect enabled image plugins, connectors, image skills and configured providers before declaring generation unavailable. On Hermes, check the active image provider/model and callable tools. On Claude or any other host, check actual native and connected image capabilities rather than assuming the conversational model can render.
+3. **Edit and finish.** Inspect generated work and use image editing, regeneration or advanced composition to repair observed weaknesses. Finish exact typography, supplied logos and layout through precise tools where useful. If no accessible image model can perform the task, use the strongest available editing/composition workflow.
+4. **SVG/native layout fallback.** Use SVG or layout-only construction when image creation and richer visual editing cannot provide the required result, or for an explicitly requested vector deliverable or bounded edit. Render and inspect the result when possible.
 
-If no image model exists, state that limitation and use the best available visual workflow. Do not pretend a layout export equals artistic image creation. Editable files are useful, but the strong finished design comes first.
+Read the [creation route](references/execution-and-critique.md) for capability checks and fallback instructions. If execution is unavailable, give an actionable editing/production specification with exact copy, assets, composition, layers and export requirements, and label it as unrendered. State the actual missing capability; do not claim that every assistant has an image model. Editable files are useful, but the strong finished design comes first.
 
 For supplied portraits, inspect identity, hair, expression, emotion, pose, angle, clothing, light and personality. Use them as identity references, then **recreate and art direct the person for the message**. Preserve recognizable facial identity while intentionally improving expression, pose/crop, lighting and styling as useful. Unless exact placement or minimal changes were requested, do not paste the same shirt, crop and neutral face into a new layout and call it a redesign. Choose credible curiosity, wonder, confidence, skepticism or another fitting emotion; avoid automatic exaggerated shock.
 

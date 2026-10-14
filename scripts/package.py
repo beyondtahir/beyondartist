@@ -17,8 +17,8 @@ def main():
     destination.mkdir(parents=True, exist_ok=True)
     files = public_paths()
     packages = [
-        ('beyondartist-skill-v1.0.0.zip', [(p, Path('beyondartist') / p.relative_to(SKILL)) for p in files if SKILL in p.parents]),
-        ('beyondartist-repo-v1.0.0.zip', [(p, Path('beyondartist') / p.relative_to(ROOT)) for p in files])
+        ('beyondartist-skill-v1.0.1.zip', [(p, Path('beyondartist') / p.relative_to(SKILL)) for p in files if SKILL in p.parents]),
+        ('beyondartist-repo-v1.0.1.zip', [(p, Path('beyondartist') / p.relative_to(ROOT)) for p in files]),
     ]
     summaries = []
     for name, members in packages:

@@ -94,7 +94,9 @@ Configure image generation through <code>hermes tools</code> if needed. Provider
 
 ## First-use check
 
-Ask your agent to confirm it can read the instructions and selected full library records; retrieve or initialize your own personal/project memory; inspect the supplied references; identify an actual image/design tool; and render/inspect the final work. Give it your platform, topic, audience, language and constraints when known.
+Ask your agent to confirm it can read the instructions and selected full library records; retrieve or initialize your own personal/project memory; inspect the supplied references; identify the strongest accessible native image model, then check connected image tools/providers if needed; and render/inspect the final work. Give it your platform, topic, audience, language and constraints when known.
+
+The creation order is **native image model → connected image model/plugin → editing/composition → SVG/native layout**. The agent chooses for the brief and repairs observed defects before delivery. Hermes checks its configured image provider/model and exposed tools; Claude and other hosts check their actual native and connected capabilities. An image skill alone does not supply model access. See the [full creation route](../skills/beyondartist/references/execution-and-critique.md).
 
 If Python is unavailable, use the canonical Markdown and memory JSON manually. If browsing is unavailable, saved knowledge supports offline work with dated claims clearly labeled. If rendering is unavailable, the deliverable must say **Production specification — not a rendered design**. An uninspected render stays an unverified draft.
 

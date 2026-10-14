@@ -63,7 +63,7 @@ Preserve identity through the medium. A sculpture uses carved forms throughout; 
 
 ## Create, inspect, deliver, learn
 
-Use a strong available image model when artistic recreation serves the brief, combine it with precise design tools when useful, and choose native/vector work for exact geometry or editable deliverables. The tools follow the design goal.
+Use the strongest accessible native image model first when artistic creation serves the brief. If native capabilities cannot perform the task, check connected image tools, plugins and configured providers. Inspect and repair the artwork with image editing and precise design tools; use editing/composition, then SVG/native layout when image models are unavailable. Exact vector work and bounded edits use their appropriate direct tools. The [creation route](../skills/beyondartist/references/execution-and-critique.md) defines these checks and the actionable production specification when rendering is unavailable.
 
 Review every final image or slide at full and realistic viewing size. The designer checks meaning, hierarchy, sequence, exact copy and platform fit. The artist checks originality, integration, expression, craft and medium fidelity. Repair observable defects before calling the work final. Then save the brief, decisions, source notes, deliverables and actual user feedback in the current project.
 

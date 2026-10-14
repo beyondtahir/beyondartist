@@ -1,10 +1,10 @@
 # Distribution validation
 
-This is the first public release, **v1.0.0**. The shared workflow and library were developed through prior local iterations; their source evidence stays intact. Internal development reports are historical records, not extra public release versions.
+The first public release is **v1.0.0**. **v1.0.1** adds explicit native-first image-model discovery, connected-tool checks and editing/SVG fallback instructions. The shared workflow and library were developed through prior local iterations; their source evidence stays intact. Internal development reports are historical records, not extra public release versions.
 
 ## What the checks cover
 
-- Complete skill/resources and first-release manifest consistency.
+- Complete skill/resources and release manifest consistency.
 - All 1,038 shared retrieval records and source/index integrity.
 - Personal/project memory persistence, profile/project scope, asset copying and actual approval declarations.
 - Exactly sixteen user-selected showcase works and one identity banner, with original PNG checksums and dimensions.
