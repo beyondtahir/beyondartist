@@ -1,0 +1,6 @@
+interface:
+  display_name: "BeyondArtist — by Beyond Tahir"
+  short_description: "Art-directed thumbnails, carousels and social posts"
+  default_prompt: "Use $beyondartist as a designer–artist team: load my personal and project memory, ask a short intake only for missing brief details, establish my platform and purpose, retrieve shared Design Memory, research the category and Pinterest, and develop an original hook and structure with serious typography; develop a missing title and consult grounded vidIQ guidance for thumbnails. Study reference craft and emotion beyond colors/fonts, preserve my identity through the chosen art form, then create and inspect communication and medium fidelity. For a complete detailed brief, give the requested direction plus one artist alternative unless I ask for only one or a bounded edit."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "beyondartist",
+  "version": "1.0.0",
+  "description": "Designer–artist thinking, research and evolving design memory for original visual work.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "BeyondArtist",
+        "shortDescription": "Think like a designer. Create like an artist.",
+        "longDescription": "Art-direct original visual work through a designer–artist workflow, source-linked Design Memory and private personal/project memory.",
+        "developerName": "Beyond Tahir",
+        "category": "Design",
+        "brandColor": "#B51E2B",
+        "composerIcon": "./assets/brand/beyondartist-icon.png",
+        "logo": "./assets/brand/beyondartist-logo.png",
+        "screenshots": [
+          "./assets/brand/banner.png",
+          "./assets/showcase/google-just-snapped.png",
+          "./assets/showcase/busywork-youre-fired.png"
+        ],
+        "defaultPrompt": [
+          "Use BeyondArtist to turn my brief into an original finished design. Ask only for missing essentials, retrieve relevant memory, research, art direct, create and inspect."
+        ]
+      }
+    }
+  }
+}

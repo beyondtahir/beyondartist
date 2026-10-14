@@ -1,0 +1,50 @@
+# BeyondArtist host compatibility and setup
+
+Documentation checked **2026-10-13**. This document verifies published loading conventions, not successful runtime execution on every host. Installation, tool access and behavioral tests must be reported separately. No browser, image generator, layout application or connector is supplied by this skill.
+
+## Portable package
+
+Keep one `beyondartist/` folder containing `SKILL.md` and its relative resources. The Agent Skills standard requires YAML `name` and `description`, followed by Markdown. The lowercase name must match the folder and fit 64 characters; description may fit 1,024 characters. Optional resources include references, assets and scripts. Supporting files load on demand. [Agent Skills specification](https://agentskills.io/specification).
+
+For this package, keep the description below **200 characters**: Claude's custom-skill help gives that narrower limit, although the open specification allows more. Use the standard uppercase `SKILL.md`. A ZIP for Claude should contain `beyondartist/SKILL.md`, not loose root files or an extra enclosing distribution directory. [Claude: How to create custom skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills).
+
+## Host setup
+
+| Host | Documented installation/loading | Invocation/check | Verification level |
+|---|---|---|---|
+| Codex | Copy the folder to `~/.agents/skills/beyondartist/`, or a repository's `.agents/skills/beyondartist/`. Current official docs support symlinked folders. | Use `$beyondartist` in Codex CLI/IDE, or select from `/skills`. If discovery does not refresh, restart Codex. | Documentation verified; see package test report for actual local tests. |
+| Claude Code | Copy the folder to `~/.claude/skills/beyondartist/` for personal use or `.claude/skills/beyondartist/` in a repository. | Invoke `/beyondartist`; confirm supporting references can be read. | Documentation verified; runtime not tested during source research. |
+| Claude Cowork | Enable code execution/file creation and skills where account or organization settings require it. In **Customize → Skills**, choose **+ → Create skill → Upload a skill**, upload the ZIP and enable it. | Start a new Cowork session and explicitly request BeyondArtist. Cowork uses enabled account skills; it does not read local `~/.claude/skills/`. | Documentation verified; upload/runtime not tested during source research. |
+| Hermes (NousResearch) | Copy the full folder to the active profile's skills directory; the default is `~/.hermes/skills/beyondartist/`. Alternatively configure a shared directory through `skills.external_dirs`. | Check `hermes skills list`, then invoke `/beyondartist`. Confirm the active profile and resource access. | Documentation verified; runtime not tested during source research. |
+
+Sources: [OpenAI: Build skills](https://learn.chatgpt.com/docs/build-skills), [Claude Code: Extend Claude with skills](https://code.claude.com/docs/en/skills), [Claude: Use skills](https://support.claude.com/en/articles/12512180-use-skills-in-claude), [Hermes: Skills System](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills). All accessed 2026-10-13.
+
+**Codex local-install distinction.** The bundled Skill Creator inspected in this build recommends `$CODEX_HOME/skills` (usually `~/.codex/skills`), while current public documentation lists `~/.agents/skills`. This machine's supplied catalog exposes both roots. Prefer the documented `.agents/skills` location for a portable new installation; preserve a working existing installation and avoid duplicate independent copies. `agents/openai.yaml` contains optional Codex UI metadata; other hosts need not interpret it. [OpenAI: Build skills](https://learn.chatgpt.com/docs/build-skills).
+
+**Hermes caveats.** A writable shared external directory can be changed by Hermes skill-management actions; use a separate copy if that is undesirable. Project-local `.hermes/skills` or `.agents/skills` require the project's explicit trust decision. URL/GitHub skill installation only fetches referenced support files, so copying the complete ZIP folder is the simple route for this release. [Hermes: Skills System](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills).
+
+## Persistent memory setup
+
+Version 1.7.0 adds per-installer personal and project memory under SYS-023. The shared creator reference/instruction library ships with the skill; private profiles and assets do not. On first use, the agent initializes a stable person/project through `scripts/user_memory.py`, using `~/.beyondartist/memory` by default or a configured persistent writable root. It retrieves relevant records before intake, saves briefs/decisions/assets/deliverables as work proceeds, and captures actual feedback with scope, tags and provenance. This is agent-managed during skill use, not an installation daemon.
+
+See [personal and project memory](references/personal-and-project-memory.md) for commands, JSON format, independent user/project scopes, copied assets and offline operation. The helper needs only Python 3.9+ standard library and writable files; no browser, API key or external database is needed. Without Python, use the same JSON records and manual retrieval. Without durable storage, return a memory export and disclose that future recall is unavailable. Local profiles survive skill updates because they live outside the skill folder. Other-host persistent storage, fresh-session skill discovery and cross-device sync must not be assumed.
+
+Do not package runtime `profiles/`, copied personal assets or caches from a user's memory root. An upgrade distributes shared instructions and helpers while preserving an existing private store. The creator's private photos are not seeded for new installers.
+
+## Capability requirements and honest fallbacks
+
+Version 1.8.0 follows the nine-step workflow in SYS-001: establish missing platform/purpose, classify and retrieve, research category/Pinterest, plan, hand off, explore as artist, create, jointly validate and deliver. SYS-020 makes the Observe–Reflect–Make learning loop explicit, distinguishing rough concept checks and actual-art review from real audience evidence. It requires message/hook development, a concrete typography specification and actual application of BeyondArtist Design Memory. A complete detailed structure receives the faithful requested design and one artist alternative under SYS-018; explicit single-output instructions and bounded edits take precedence. The unified local index retrieves foundations, saved art studies and creative-system guidance; both roles can improve hierarchy. SYS-021 requires deliberate transfer of reference craft, emotion and purposeful complexity; SYS-022 preserves identity through the chosen medium and rejects failed material treatments instead of retrospectively renaming them hybrids. When host delegation is available, use distinct designer and artist agents; otherwise perform the roles sequentially without claiming a separate team ran. No particular model or multi-agent plugin is required. Artistic creation still prioritizes image generation, then advanced visual design/composition or a useful combination for finishing. SVG/layout-only output is a last available workflow, except explicit vector/native edits. Preserve identity while recreating pose, expression, styling and light to support the idea; preserve exact-placement constraints, and keep approved minimal edits bounded.
+
+| Need | Host capability to verify | If unavailable |
+|---|---|---|
+| Read library | File access and Markdown reading | Supply the relevant reference files to the agent; do not claim they were loaded. |
+| Inspect design references and final renders | Vision plus image/file rendering or screenshots | Mark visual review incomplete; use an accessible vision-enabled surface before calling a visual artifact final. |
+| Live Pinterest research | Authorized browsing and visible image access | State the actual error or access limit and continue with the supplied library under this skill’s preauthorized offline fallback. Request an authorized browser connection only when live research is required; the user signs in directly. |
+| Create exact text/layout | An editable design/layout tool, or a suitable local rendering stack | Produce an explicitly labeled production specification if no artifact can be generated. Image generation alone does not ensure accurate typography. |
+| Create or recreate artistic imagery | Prefer a strong available image-generation integration; combine with advanced design tools for precise finishing | State the missing capability. Use advanced native visual composition if available; use SVG/layout-only construction only as the best remaining fallback, never as equivalent artistic generation. |
+| Export | Renderer/exporter for the requested format and permission to write files | State which source/draft exists and which export remains unavailable. |
+
+The core workflow has no API key requirement. Tool-specific credentials and installation belong to the host's normal secure setup. The optional local retrieval script uses Python's standard library only; it needs no network, API key, embeddings service or database server. Without Python, read the retrieval index and linked Markdown directly. Offline mode uses stored annotations and locally available permitted assets; it does not simulate live Pinterest access. Other agents that support Agent Skills may read this package, but their discovery paths, resource access and rendering abilities remain unverified until tested.
+
+
+Version 1.8.0 adds adaptive intake (SYS-024), category-led thumbnail/title development with checked vidIQ guidance (SYS-025), and explicit shared teaching/private job separation (SYS-026). Read the linked intake/packaging guides when those tasks apply. vidIQ is optional; public saved guidance and local memory work without a connector, while paid/account-dependent calls follow their current host instructions and authorization. No proprietary score is fabricated when unavailable.

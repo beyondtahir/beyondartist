@@ -1,0 +1,27 @@
+name: Creative workflow feedback
+description: Report an observed workflow, tool, documentation or design-quality problem.
+title: "[Feedback] "
+body:
+  - type: textarea
+    id: situation
+    attributes:
+      label: What happened?
+      description: Use a synthetic or anonymized description. Do not attach private client data or portraits.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should the workflow have done?
+    validations:
+      required: true
+  - type: input
+    id: host
+    attributes:
+      label: Host and version
+      placeholder: "Agent surface, skill version, available tools"
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Relevant evidence
+      description: Public source links, sanitized logs or a reproducible synthetic brief.
