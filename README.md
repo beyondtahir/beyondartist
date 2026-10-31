@@ -144,4 +144,9 @@ beyondartist/
 
 The workflow, code and reusable written guidance are MIT licensed. Showcase artwork and BeyondArtist identity are display examples with separate terms in [ASSET-LICENSE.md](ASSET-LICENSE.md). Private photographs, personal prompts, transcripts and runtime profiles are excluded. Read [contribution guidance](CONTRIBUTING.md) before adding reference knowledge.
 
+## Contributors
+
+- **[Beyond Tahir](https://github.com/beyondtahir)** — Creator and project lead; creative direction, design experience and shared learning.
+- **[Codex](https://github.com/codex)** — OpenAI's AI coding agent; engineering, documentation, packaging and validation in collaboration with Beyond Tahir.
+
 <p align="center"><strong>Think deeply. Create boldly. Make the right parts matter.</strong><br />BeyondArtist — by Beyond Tahir</p>
