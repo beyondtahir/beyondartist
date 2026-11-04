@@ -1,4 +1,4 @@
-<a href="docs/getting-started.md"><picture><source srcset="assets/readme/hero.webp" type="image/webp"><img src="assets/readme/hero-still.jpg" alt="A wall of identical AI images rips open to reveal a crimson and black painting. Turn AI slop into work worth paying for. Think like a designer. Execute like an artist." width="100%"></picture></a>
+<a href="docs/getting-started.md"><picture><source srcset="assets/readme/hero.webp" type="image/webp"><img src="assets/readme/hero-still.jpg" alt="A man rips through a wall of identical AI images, with a lion, a horned goat, a sloth on a giant pencil and a walking cardboard box bursting out behind him. Turn AI slop into work worth paying for. Think like a designer. Execute like an artist." width="100%"></picture></a>
 
 <h1 align="center">Your AI can make images.<br>This makes it care how they look.</h1>
 
