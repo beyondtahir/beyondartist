@@ -2,7 +2,7 @@
 
 Public release numbers start at 1.0.0. Earlier numbers in old test reports, such as 1.3 or 1.8, are internal development builds from before the public release.
 
-## 1.1.0 (unreleased)
+## 1.1.0 (2026-11-05)
 
 ### Added
 
