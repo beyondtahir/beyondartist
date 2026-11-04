@@ -1,169 +1,131 @@
+<a href="docs/getting-started.md"><picture><source srcset="assets/readme/hero.webp" type="image/webp"><img src="assets/readme/hero-still.jpg" alt="A wall of identical AI images rips open to reveal a crimson and black painting. Turn AI slop into work worth paying for. Think like a designer. Execute like an artist." width="100%"></picture></a>
+
+<h1 align="center">Your AI can make images.<br>This makes it care how they look.</h1>
+
+<p align="center"><strong>A free design skill for freelancers, creators and marketers.</strong><br>Think like a designer. Execute like an artist.</p>
+
 <p align="center">
-  <img src="assets/brand/banner.png" alt="BeyondArtist — Think like a designer. Create like an artist. By Beyond Tahir." width="100%" />
+  <a href="#install-in-30-seconds"><strong>Install</strong></a> &nbsp;·&nbsp;
+  <a href="#autopilot">Autopilot</a> &nbsp;·&nbsp;
+  <a href="docs/gallery.md">Gallery</a> &nbsp;·&nbsp;
+  <a href="docs/creative-system.md">The process</a> &nbsp;·&nbsp;
+  <a href="docs/automation.md">Daily automation</a>
 </p>
 
-<h1 align="center">Turn AI Slop Into Work Worth Paying For.</h1>
-<p align="center"><strong>Think like a designer. Execute like an artist.</strong></p>
-<p align="center">
-  <a href="docs/getting-started.md"><strong>Start creating →</strong></a> &nbsp; / &nbsp;
-  <a href="docs/gallery.md">See the work</a> &nbsp; / &nbsp;
-  <a href="docs/creative-system.md">Inside the process</a> &nbsp; / &nbsp;
-  <a href="docs/automation.md">Put it to work daily</a>
-</p>
+## Not one template. Sixteen different answers.
 
----
+<a href="docs/gallery.md"><img src="assets/readme/gallery-wall.jpg" alt="A wall of 16 BeyondArtist designs: thumbnails, posters, carousel covers and character art, each with its own idea, palette and lettering." width="100%"></a>
 
-**BeyondArtist is an AI design skill built to help freelancers, content creators and digital marketers use AI to create original, sellable work and viral content.** It guides your agent through a designer’s thinking—understand the audience, research the category, find the creative angle, and choose purposeful typography, color and structure—then gives the artist room to create something distinctive. Turn your ideas into client-ready designs and content that stands out.
+Same skill, sixteen briefs. Nothing here shares a palette, a layout or a trick, because each piece started from its own idea. **[See them full size →](docs/gallery.md)**
 
-## The work comes first
+<sub>Selected design examples. The people, characters, colors and claims pictured do not become your defaults. See [asset terms](ASSET-LICENSE.md).</sub>
 
-<a href="assets/showcase/google-just-snapped.jpg"><img src="assets/showcase/previews/google-just-snapped.jpg" alt="Editorial Gemini thumbnail with engraved portraits, bold typography and pink torn paper" width="100%" /></a>
+## Install in 30 seconds
 
-<table>
-<tr>
-<td width="50%"><a href="assets/showcase/ideas-dont-behave.jpg"><img src="assets/showcase/front/ideas-dont-behave.jpg" alt="Ideas don’t behave — expressive purple and orange mixed-media poster" width="100%" /></a></td>
-<td width="50%"><a href="assets/showcase/lion-crimson.jpg"><img src="assets/showcase/front/lion-crimson.jpg" alt="Grey lion character in crimson with deliberate linework and expression" width="100%" /></a></td>
-</tr>
-<tr>
-<td width="50%"><a href="assets/showcase/busywork-youre-fired.jpg"><img src="assets/showcase/front/busywork-youre-fired.jpg" alt="Busywork. You’re fired. — lime and plum tactile carousel cover" width="100%" /></a></td>
-<td width="50%"><a href="assets/showcase/there-was-a-time.jpg"><img src="assets/showcase/front/there-was-a-time.jpg" alt="There was a time — engraved portrait poster with expressive serif typography" width="100%" /></a></td>
-</tr>
-<tr>
-<td width="50%"><a href="assets/showcase/bolne-de.jpg"><img src="assets/showcase/front/bolne-de.jpg" alt="Bolne de — painted freelance pricing meme with expressive lettering" width="100%" /></a></td>
-<td width="50%"><a href="assets/showcase/fast-ideas-slow-human.jpg"><img src="assets/showcase/front/fast-ideas-slow-human.jpg" alt="Fast ideas. Slow human. — tactile sloth and pencil visual metaphor" width="100%" /></a></td>
-</tr>
-</table>
+**Claude Code.** Run these inside Claude Code, then restart it:
 
-**[Explore all 16 sample artworks →](docs/gallery.md)** · These are selected design examples. The people, characters, colors and claims pictured here do not become your defaults.
+~~~text
+/plugin marketplace add beyondtahir/beyondartist
+/plugin install beyondartist@beyondartist
+~~~
 
-## Autopilot: one link, finished designs
+**Using something else?** Codex, Claude Cowork, ChatGPT, Gemini, Hermes and others each have a route in the **[setup guide →](docs/getting-started.md)**
+
+Then just talk to it:
+
+~~~text
+Use BeyondArtist. Make a carousel explaining my service to small business owners.
+Keep the copy short. Warm humor. Handle the design choices.
+~~~
+
+You don't need to know fonts, palettes or prompt tricks. No image model? **[It still works →](docs/no-image-model.md)**
+
+## Autopilot
+
+> **One link. No brief. Finished designs.**
 
 ~~~text
 /beyondartist:autopilot https://www.youtube.com/watch?v=VIDEO_ID
 ~~~
 
-<p align="center"><img src="assets/demo/autopilot-demo.gif" alt="Autopilot demo: one link becomes three concepts, a Feed Test finds a problem, the art is repaired and passes the Quality Gate" width="100%" /></p>
+<img src="assets/demo/autopilot-demo.gif" alt="Autopilot demo: one link becomes three concepts, a Feed Test finds a problem, the art is repaired and goes through the Quality Gate." width="100%">
 
-No brief. BeyondArtist reads the video, studies the real competition, makes three concepts, shows them in a **Feed Test** among actual competitor thumbnails, measures the finished pixels with a **Quality Gate**, sets exact text in real fonts, including Urdu, and hands you the files. It remembers what you approve, so the next one starts closer. It never uploads anything, and it never promises clicks.
-
-**[How Autopilot works →](docs/autopilot.md)** · **[No image model? Still works →](docs/no-image-model.md)**
-
-## AI can make images. Give it a reason to make something worth seeing.
-
-BeyondArtist is a complete creative design workflow for AI agents. It brings together a **designer**, an **artist**, source-linked **Design Memory**, personal/project memory and an actual-art quality check. Start with an idea, a client brief, a photograph, a phrase or a reference. The agent shapes the message, finds the creative angle, develops the visual language, creates the work and checks the result.
-
-**Control AI. Direct its taste. Create beyond the prompt.**
-
-Built for YouTube thumbnails, Instagram carousels, freelance client work, campaign artwork, posters, characters, product imagery, covers and visual brand projects. Each brief gets its own concept, palette, expression and hierarchy.
-
-> **Think like a designer. Create like an artist. Study attention like a strategist.**
-
-## Why BeyondArtist exists
-
-Repeated layouts. The same pasted face. Loud color without a concept. Decorative typography. Different subjects that somehow all look the same. These are design problems that another longer image prompt often leaves unresolved.
-
-BeyondArtist gives the agent a working creative process. It studies the audience and visual environment, retrieves useful principles, develops distinct concepts and gives the artist room to surprise. Then it checks whether the idea, medium, expression, type and hierarchy actually appear in the finished pixels.
-
-| The problem | The creative response |
+| | What it does for you |
 |---|---|
-| Every result has the same flavor | Choose the concept, art form and palette for this brief |
-| A photograph is pasted into a template | Art-direct identity, expression, styling and light when recreation serves the work |
-| The hook and artwork tell different stories | Develop copy and imagery together, with a deliberate reading order |
-| References are copied or barely studied | Transfer gesture, craft, emotion, material and structure into an original interpretation |
-| A carousel is a stack of unrelated images | Build its hook, progression, rhythm and payoff as one experience |
-| The agent forgets what the client said | Retrieve tagged personal and project records before asking again |
+| **Reads the job** | Your title, description, chapters and current thumbnail |
+| **Knows your taste** | What you approved and rejected, kept privately on your machine |
+| **Feed Test** | Puts each design among real competitor thumbnails at phone, desktop and sidebar size |
+| **Quality Gate** | Measures the finished pixels: exact words, phone-size contrast, overlay collisions, clutter and repeats of your past work |
+| **Real type** | Sets exact text in real fonts, including shaped Urdu, Arabic, Persian and Hindi |
+| **Delivery pack** | Upload-ready file, master, phone preview and editable HTML |
 
-## Built for attention. Ready for real creative work.
+It never uploads anything, and it never promises clicks. The Gate measures the file, not the future. **[How Autopilot works →](docs/autopilot.md)**
 
-The designer studies what this audience sees, what inspected examples repeat and which useful angle could earn attention. The artist turns that angle into a distinctive piece of work. Short copy, expressive craft, small-screen clarity and a truthful curiosity gap support content people want to click, swipe, save or share.
+## Two minds. One mark.
 
-Use it to develop a creator’s visual identity, deliver a coherent client carousel, art-direct a product campaign or build a freelance portfolio. It can support sellable creative work; the quality still depends on the brief, available tools, review and the rights attached to the final assets.
+<img src="assets/readme/designer-artist.jpg" alt="A precise hand draws a pencil line through exact construction geometry. At the center it becomes a wild crimson brushstroke held by a paint-covered hand. Think like a designer. Create like an artist." width="100%">
 
-Built from Beyond Tahir’s creative experience and a developed design library, BeyondArtist puts viral-content thinking, artistic execution and reusable client context into one workflow. Save feedback from each job and make the next piece sharper.
+Most AI design jumps from your sentence straight to a picture. BeyondArtist puts two roles in between. The **designer** finds the message, the audience and what the category keeps repeating. The **artist** turns that into something nobody expected. Either can overrule the other, and both must approve the actual pixels.
 
-## One creative team. Nine connected steps.
+<details>
+<summary><strong>See the nine steps</strong></summary>
+
+<br>
 
 | Step | What happens |
 |---|---|
-| **01 — Understand** | Retrieve relevant user context; ask only the missing consequential questions |
-| **02 — Classify & retrieve** | Separate platform, format, content category and mood; search Design Memory |
-| **03 — Research** | Inspect the category and Pinterest; distinguish observations from performance hypotheses |
-| **04 — Design the idea** | Develop the angle, exact copy, type hierarchy, palette roles and composition or sequence |
-| **05 — Hand off** | Give the artist constraints, evidence, source lessons and visible acceptance checks |
-| **06 — Explore as an artist** | Compare three meaningful concepts for substantial work; refine medium, emotion and craft |
-| **07 — Create** | Use the best available image/design tools and finish exact text where needed |
-| **08 — Inspect together** | Review actual artwork at full and realistic viewing size; repair concrete weaknesses |
-| **09 — Deliver & learn** | Return finished files, concise reasoning and scoped memory updates |
+| **01 Understand** | Retrieve your context; ask only what's truly missing |
+| **02 Classify and retrieve** | Separate platform, format, category and mood; search Design Memory |
+| **03 Research** | Inspect the category and Pinterest; keep observation apart from guesswork |
+| **04 Design the idea** | Angle, exact copy, type hierarchy, palette roles and composition |
+| **05 Hand off** | Give the artist constraints, evidence and visible acceptance checks |
+| **06 Explore as an artist** | Compare three meaningfully different concepts |
+| **07 Create** | Use the best available image and design tools; finish exact text |
+| **08 Inspect together** | Review the real artwork at full and viewing size; repair weaknesses |
+| **09 Deliver and learn** | Return finished files, concise reasoning and memory updates |
 
-The artist can improve the designer’s plan. Both own hierarchy. An open brief gets the strongest finished direction; a complete detailed brief gets the requested direction plus an artist alternative unless you request one output. A small correction stays a small correction.
+An open brief gets the strongest direction. A detailed brief gets what you asked for, plus an artist's alternative unless you want just one. A small correction stays a small correction. **[Go deeper →](docs/creative-system.md)**
 
-**[Read how concepts, palettes, typography and artist hierarchy are chosen →](docs/creative-system.md)**
+</details>
 
-## Memory that grows with you
+## It remembers. Slop doesn't.
 
-| Memory layer | What it contains |
+| Memory | What it holds |
 |---|---|
-| **Shared Design Memory** | Reusable instructions, source-linked design studies, palette relationships, typography, hierarchy and thumbnail lessons |
-| **Your personal memory** | Your supplied identity references, scoped brand rules, preferences and approved/rejected directions |
-| **Your project memory** | This job’s brief, source observations, concept decisions, assets, revisions, deliverables and actual feedback |
+| **Design Memory** (shared) | 95 foundation records, 700 Pinterest studies, 54 style panels, 7 seed studies and 100 engagement-qualified thumbnail references, plus workflow guidance |
+| **Your memory** (private) | Your likeness references, brand rules, preferences and approved or rejected directions |
+| **Project memory** (private) | Each job's brief, decisions, revisions, deliverables and real feedback |
 
-The shared library includes **95 foundation records, 700 Pinterest preview studies, 54 style-panel studies, seven seed studies and 100 engagement-qualified thumbnail references**, plus workflow guidance. These counts describe different kinds of evidence; they are not a claim of that many independent designs or proven viral outcomes.
+Runs locally with Python. No vector database and no API key. Your records stay in <code>~/.beyondartist/memory</code>, outside the skill. The library counts describe different kinds of evidence, not proof of viral results. **[Memory and privacy →](docs/memory.md)**
 
-Retrieval uses local Python helpers and canonical Markdown/JSON. It needs no vector database or API key. Private records live outside the installed skill, defaulting to <code>~/.beyondartist/memory</code>, and evolve during skill use. With no browser, the agent can use saved lessons and your context while clearly labeling offline research.
+## Works where you work
 
-**[Memory, consistency and privacy →](docs/memory.md)**
-
-## Start with a normal brief
-
-~~~text
-Use BeyondArtist. Create an Instagram carousel explaining my service to small
-business owners. Keep the copy short. I want warm humor and an artistic visual
-system. Ask only for information you still need, then handle the design choices.
-~~~
-
-You can also give a detailed structure, reference an approved design or request a bounded edit. You do not need to choose a font, palette or rendering vocabulary first.
-
-**[Copy-ready examples for thumbnails, carousels, freelance work and posts →](examples/briefs.md)**
-
-## Choose your agent
-
-| Surface | Starting route |
+| Host | Start with |
 |---|---|
-| **Codex** | Install the full folder under <code>.agents/skills</code>; invoke <code>$beyondartist</code> |
-| **Claude Code** | <code>/plugin marketplace add beyondtahir/beyondartist</code>, then <code>/plugin install beyondartist@beyondartist</code> |
-| **Claude Cowork** | Upload the skill ZIP through Customize → Skills; start a fresh session |
-| **ChatGPT Work** | Use an accessible local skill in the desktop app or an enabled plugin route; invoke <code>@beyondartist</code> |
-| **Gemini Apps / CLI** | Upload through Gemini Skills, or link the folder using Gemini CLI |
+| **Claude Code** | The plugin above, then <code>/beyondartist:autopilot</code> or <code>/beyondartist:beyondartist</code> |
+| **Claude Cowork** | Upload the skill ZIP in Customize → Skills |
+| **Codex** | Install under <code>.agents/skills</code>; invoke <code>$beyondartist</code> |
+| **ChatGPT Work** | A local skill or enabled plugin; invoke <code>@beyondartist</code> |
+| **Gemini** | Upload through Gemini Skills, or link the folder in the CLI |
 | **Hermes Agent** | Install the complete skill; invoke <code>/beyondartist</code> |
-| **Dots / Grok Bot** | Use the documented skill-access or saved-workflow route and verify accessible tools |
+| **Dots / Grok Bot** | The documented skill-access or saved-workflow route |
 
-**[Installation and current host-specific instructions →](docs/getting-started.md)** · **[Daily automation recipes →](docs/automation.md)**
+Your host supplies image generation, browsing and vision. BeyondArtist supplies the judgment and the workflow. Quality still depends on your brief, your tools, your review and the rights to your final assets. Routes come from each host's documentation; runtime results can differ. **[Full instructions →](docs/getting-started.md)** · **[Daily automation →](docs/automation.md)**
 
-The host supplies image generation, browsing, vision, file access and scheduling. BeyondArtist supplies creative judgment and the workflow. A host without rendering tools gets a labeled production specification; a finished image is delivered only when it was actually created. Documentation-based compatibility is separate from runtime testing.
+## Made something with it?
 
-## What ships
+**[Show us →](https://github.com/beyondtahir/beyondartist/issues/new?template=share-your-work.yml)** · **[Hit a problem? →](https://github.com/beyondtahir/beyondartist/issues/new?template=install-problem.yml)** · **[Contribute →](CONTRIBUTING.md)** · **[What changed →](CHANGELOG.md)**
 
-~~~text
-beyondartist/
-├── README.md                 The story and selected work
-├── plugin.json               Portable plugin manifest
-├── .claude-plugin/           Claude Code plugin and marketplace manifests
-├── commands/                 Autopilot, thumbnail, carousel and brand setup commands
-├── skills/beyondartist/      Complete installable skill and shared Design Memory
-├── assets/                   Approved identity and showcase images only
-├── docs/                     Process, setup, memory, automation and gallery
-├── examples/                 Synthetic starter briefs and recurring-job prompts
-└── scripts/                  Local installation, packaging and release checks
-~~~
+## Made by
 
-[See what changed →](CHANGELOG.md)
+<table>
+<tr>
+<td align="center" width="33%"><a href="https://github.com/beyondtahir"><img src="https://github.com/beyondtahir.png?size=160" width="80" alt="Beyond Tahir"><br><strong>Beyond Tahir</strong></a><br><sub>Creator and project lead: creative direction, design experience and shared learning</sub></td>
+<td align="center" width="33%"><a href="https://github.com/codex"><img src="https://github.com/codex.png?size=160" width="80" alt="Codex"><br><strong>Codex</strong></a><br><sub>OpenAI's coding agent: engineering, documentation, packaging and validation</sub></td>
+<td align="center" width="33%"><a href="https://github.com/claude"><img src="https://github.com/claude.png?size=160" width="80" alt="Claude"><br><strong>Claude</strong></a><br><sub>Anthropic's coding agent: Autopilot, Quality Gate, Claude plugin and this page</sub></td>
+</tr>
+</table>
 
-The workflow, code and reusable written guidance are MIT licensed. Showcase artwork and BeyondArtist identity are display examples with separate terms in [ASSET-LICENSE.md](ASSET-LICENSE.md). Private photographs, personal prompts, transcripts and runtime profiles are excluded. Read [contribution guidance](CONTRIBUTING.md) before adding reference knowledge.
+<sub>The workflow, code and written guidance are [MIT licensed](LICENSE). Showcase art and BeyondArtist identity have [separate terms](ASSET-LICENSE.md). Private photographs, personal prompts and runtime profiles are never included.</sub>
 
-## Contributors
-
-- **[Beyond Tahir](https://github.com/beyondtahir)** — Creator and project lead; creative direction, design experience and shared learning.
-- **[Codex](https://github.com/codex)** — OpenAI's AI coding agent; engineering, documentation, packaging and validation in collaboration with Beyond Tahir.
-- **[Claude](https://claude.com/claude-code)** — Anthropic's AI coding agent; Autopilot, Feed Test, Quality Gate, Claude Code plugin and search in collaboration with Beyond Tahir.
-
-<p align="center"><strong>Think deeply. Create boldly. Make the right parts matter.</strong><br />BeyondArtist — by Beyond Tahir</p>
+<p align="center"><strong>Think deeply. Create boldly. Make the right parts matter.</strong><br>BeyondArtist, by Beyond Tahir</p>
