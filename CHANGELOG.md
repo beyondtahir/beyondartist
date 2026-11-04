@@ -2,6 +2,10 @@
 
 Public release numbers start at 1.0.0. Earlier numbers in old test reports, such as 1.3 or 1.8, are internal development builds from before the public release.
 
+## Unreleased
+
+- The skill now states plainly that it uses the best model the person's assistant offers, with guidance per host, and names the model used in its delivery note. A test keeps specific model names out of the routing files.
+
 ## 1.1.0 (unreleased)
 
 ### Added

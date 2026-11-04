@@ -110,7 +110,7 @@ Runs locally with Python. No vector database and no API key. Your records stay i
 | **Hermes Agent** | Install the complete skill; invoke <code>/beyondartist</code> |
 | **Dots / Grok Bot** | The documented skill-access or saved-workflow route |
 
-Your host supplies image generation, browsing and vision. BeyondArtist supplies the judgment and the workflow. Quality still depends on your brief, your tools, your review and the rights to your final assets. Routes come from each host's documentation; runtime results can differ. **[Full instructions →](docs/getting-started.md)** · **[Daily automation →](docs/automation.md)**
+**It uses the best model your assistant has**, and it hardcodes none: BeyondArtist supplies the judgment and the workflow, and your host supplies the image generation, browsing and vision. **[Which model? →](docs/autopilot.md#which-ai-model-does-it-use)** Quality still depends on your brief, your tools, your review and the rights to your final assets. Routes come from each host's documentation; runtime results can differ. **[Full instructions →](docs/getting-started.md)** · **[Daily automation →](docs/automation.md)**
 
 ## Made something with it?
 

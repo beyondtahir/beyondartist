@@ -102,6 +102,10 @@ Configure image generation through <code>hermes tools</code> if needed. Provider
 
 **Grok Bot:** attach the workflow and supporting files, run one concrete job, then ask the Bot to save the reusable workflow as a skill named beyondartist. Select it with <code>/</code>; enable the private skill for that Bot if needed. This uses Grok Bot’s native saved-skill workflow, not an asserted lossless GitHub importer. [Official Grok Bot setup](https://cursor.com/docs/grok-bot/get-started), [skills and work](https://cursor.com/docs/grok-bot/work).
 
+## Which model it uses
+
+BeyondArtist uses the best model your assistant offers, and it hardcodes none. On each run, the agent checks what this host can actually use right now and names what made the work. Claude does not generate photo-style images itself, so on Claude it uses a connected image tool or the [no-image route](no-image-model.md). Choose a model yourself at any time: an explicit choice always wins.
+
 ## First-use check
 
 Ask your agent to confirm it can read the instructions and selected full library records; retrieve or initialize your own personal/project memory; inspect the supplied references; identify the strongest accessible native image model, then check connected image tools/providers if needed; and render/inspect the final work. Give it your platform, topic, audience, language and constraints when known.
