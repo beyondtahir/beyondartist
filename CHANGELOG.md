@@ -18,6 +18,7 @@ Public release numbers start at 1.0.0. Earlier numbers in old test reports, such
 
 ### Changed
 
+- The README is rebuilt around new art: an animated hero, a gallery wall and a designer-artist image.
 - Design Memory search now favors records that match more of the query, and reports how much of the query each result covers.
 - Memory errors now name the accepted values and the command to run.
 - The skill description now covers posters and Autopilot, so it triggers on more of what it can do.
