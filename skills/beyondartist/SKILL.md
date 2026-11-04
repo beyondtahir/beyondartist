@@ -1,9 +1,9 @@
 ---
 name: beyondartist
-description: Art direct and create original YouTube thumbnails, thumbnail redesigns, Instagram carousels and social posts using category research, an offline design library and image-led creation.
+description: Art direct and create original YouTube thumbnails, carousels, posters and social posts. Autopilot turns one video link into tested, finished designs with no brief.
 metadata:
   author: Beyond Tahir
-  version: "1.0.1"
+  version: "1.1.0"
 ---
 
 # BeyondArtist — by Beyond Tahir
@@ -21,6 +21,10 @@ Call the persistent library **BeyondArtist Design Memory** in working briefs and
 Use [personal and project memory](references/personal-and-project-memory.md) and `SYS-023` at the start and close of each job. The shared Design Memory carries the creator's reusable project knowledge for every installer. Each installer separately builds a persistent personal store and scoped project history outside the skill folder through `scripts/user_memory.py`: tagged identity/brand/preferences, copied supplied assets, briefs, decisions, deliverables and actual feedback. Retrieve the active person's relevant context before asking known questions, then retrieve shared design lessons; current instructions govern. Save useful new records as work evolves, retain provenance/revisions, and distinguish drafts, approvals and rejections. Do not include the creator's private photos or any installer's runtime records in the portable package. If browsing is unavailable, use personal/project context and the shared library, disclosing offline research and dated facts. Verify the host's durable file access; installation alone supplies no background capture, cross-account recall or remote sync.
 
 Apply `SYS-026`: shared learning retains the creator’s operating prompts, source-linked design studies and reusable corrections; private image-test prompts, identity/assets, exact video/post briefs and user-specific style choices stay in that owner’s memory. Anonymous failure lessons and synthetic tests can validate the workflow without seeding another installer’s identity or style.
+
+## Autopilot
+
+When the user invokes Autopilot, or gives a video link and wants the design handled, follow [Autopilot](references/autopilot.md). It runs this workflow with delegated choices, a stated generation budget, the Feed Test, the Quality Gate, exact typesetting and a delivery pack through `scripts/autopilot.py`. Use its `gate` and `typeset` commands on any other job when they help. They measure the file; they do not predict clicks or replace visual review.
 
 ## Establish the brief and scope
 
@@ -101,6 +105,7 @@ If rendering is unavailable, label the work **Production specification — not a
 - [Research and offline operation](references/research-and-offline.md): category research, Pinterest, evidence, access and rights.
 - [Library index](references/library-index.md): retrieval map, source counts and every Markdown study set.
 - [Thumbnail learning](references/thumbnail-learning.md): apply verified Pinterest reference studies to original artist decisions.
+- [Autopilot](references/autopilot.md): one video link to tested, finished designs, including the no-image route.
 - [Source register](references/source-register.md): supplied materials, canonical destinations, instruction authority and project-specific limits.
 - [Local retrieval](references/retrieval.md): unified source-preserving search across Design Memory for the designer and artist.
 - [Personal and project memory](references/personal-and-project-memory.md): per-installer storage, tagged assets and evolving project context, including offline and restricted-host operation.

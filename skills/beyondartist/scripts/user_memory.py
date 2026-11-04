@@ -102,7 +102,7 @@ def validate_record(record):
     identifier(record['id'])
     nonempty(record['title'], 'title')
     if record['kind'] not in KINDS or record['status'] not in STATUSES:
-        raise ValueError('Unknown record kind or status.')
+        raise ValueError('Unknown record kind or status. kind: ' + ', '.join(sorted(KINDS)) + '. status: ' + ', '.join(sorted(STATUSES)) + '.')
     if record['scope'] not in {'personal', 'project'}:
         raise ValueError('Unknown memory scope.')
     if record['scope'] == 'project':
@@ -115,7 +115,7 @@ def validate_record(record):
         raise ValueError('text must be text and data must be a JSON object.')
     provenance = record['provenance']
     if not isinstance(provenance, dict) or provenance.get('kind') not in PROVENANCE:
-        raise ValueError('provenance.kind must identify the source type.')
+        raise ValueError('provenance.kind must be one of: ' + ', '.join(sorted(PROVENANCE)) + '.')
     nonempty(provenance.get('reference'), 'provenance.reference')
     if record['status'] == 'approved':
         approval = record.get('approval') or provenance
@@ -153,7 +153,7 @@ def record_key(project, rid):
 def load(directory, person):
     path = directory / 'memory.json'
     if not path.exists():
-        raise ValueError('Profile not initialized. Run init for this person first.')
+        raise ValueError('Profile not initialized. First run: user_memory.py init --person <id> --name "Your name"')
     db = read_json(path)
     validate_database(db, person)
     return db
@@ -217,7 +217,7 @@ def put(root, person, payload, project=None, asset=None):
     with locked(directory):
         db = load(directory, person)
         if project and identifier(project) not in db['projects']:
-            raise ValueError('Initialize the project in this profile first.')
+            raise ValueError('Initialize project "' + project + '" first: user_memory.py init --person ' + person + ' --project ' + project + ' --name "Your name" --project-name "Project name"')
         rid = identifier(payload.get('id') or ('record-' + uuid.uuid4().hex[:16]))
         key = record_key(project, rid)
         old = db['records'].get(key)
@@ -290,7 +290,7 @@ def retrieve(root, person, project=None, query='', tags=(), kinds=(), statuses=(
     with locked(directory):
         db = load(directory, person)
         if project and identifier(project) not in db['projects']:
-            raise ValueError('Unknown project in this profile.')
+            raise ValueError('Unknown project in this profile. Create it with: user_memory.py init --person <id> --project <id>')
         cached = directory / 'index.json'
         try:
             index = read_json(cached)

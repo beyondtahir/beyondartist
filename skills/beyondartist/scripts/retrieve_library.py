@@ -398,8 +398,24 @@ def load_index(root):
     return index
 
 
+# Common ways people describe a design idea, mapped to words the library actually uses.
+CONCEPTS = {
+    'data': ('chart', 'infographic', 'statistic'), 'visualization': ('chart', 'infographic', 'diagram'),
+    'dataviz': ('chart', 'infographic', 'diagram'), 'minimal': ('negative', 'restraint', 'simple'),
+    'catchy': ('hook', 'attention'), 'clickbait': ('hook', 'curiosity'), 'viral': ('hook', 'attention'),
+    'readable': ('legibility', 'contrast'), 'legible': ('legibility', 'contrast'), 'font': ('typography', 'type'),
+    'fonts': ('typography', 'type'), 'colour': ('palette', 'color'), 'colours': ('palette', 'color'),
+    'colors': ('palette', 'color'), 'luxury': ('premium', 'elegant'),
+}
+
+
 def rank(index, query, corpus=(), categories=(), requested_ids=()):
-    terms = list(dict.fromkeys(tokens(query)))
+    asked = list(dict.fromkeys(tokens(query)))
+    terms = list(asked)
+    for term in asked:
+        for related in CONCEPTS.get(term, ()):
+            if related not in terms:
+                terms.append(related)
     ranked = []
     count = index['record_count']
     for record in index['records']:
@@ -425,6 +441,12 @@ def rank(index, query, corpus=(), categories=(), requested_ids=()):
             score += 0.15 * idf if not primary_match and term in record['context_terms'] else 0
         if terms and not matches:
             continue
+        # A record that answers more of the question beats one that repeats a single rare word.
+        related_words = {term: {term, *CONCEPTS.get(term, ())} for term in asked}
+        covered = sum(1 for term in asked if related_words[term].intersection(matches))
+        coverage = covered / len(asked) if asked else 1
+        score *= 0.5 + 0.5 * coverage
+        record = dict(record, match_coverage=round(coverage, 2))
         ranked.append((score, record, matches))
     return sorted(ranked, key=lambda row: (-row[0], row[1]['id'])), terms
 

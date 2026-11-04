@@ -30,14 +30,24 @@ references, propose a fitting title and handle the creative decisions.
 
 ## Claude Code
 
-Install and authenticate Claude Code first using its [official setup](https://code.claude.com/docs/en/quickstart), then:
+Install and authenticate Claude Code first using its [official setup](https://code.claude.com/docs/en/quickstart). Then, inside Claude Code, run these two commands:
 
-~~~sh
-python3 scripts/install.py --host claude
-claude
+~~~text
+/plugin marketplace add beyondtahir/beyondartist
+/plugin install beyondartist@beyondartist
 ~~~
 
-Invoke <code>/beyondartist</code>. Claude Code discovers the personal folder <code>~/.claude/skills/beyondartist</code>; repository-scoped skills go in <code>.claude/skills</code>. A fresh session should discover the full directory. Confirm the actual image tool before requesting finished raster work. [Claude Code skills](https://code.claude.com/docs/en/skills).
+Restart Claude Code, then ask for BeyondArtist in a normal brief or invoke <code>/beyondartist:beyondartist</code>. Update later with <code>/plugin update beyondartist@beyondartist</code>. Then try <code>/beyondartist:autopilot</code>, <code>/beyondartist:thumbnail</code>, <code>/beyondartist:carousel</code> or <code>/beyondartist:brand-setup</code>. The plugin also includes the repository's showcase images, so the first install takes longer than the skill-only route.
+
+**Skill only (about 1.5 MB, no plugin):**
+
+~~~sh
+mkdir -p ~/.claude/skills && curl -fsSL https://github.com/beyondtahir/beyondartist/releases/download/v1.1.0/beyondartist-skill-v1.1.0.zip -o /tmp/beyondartist.zip && unzip -q /tmp/beyondartist.zip -d ~/.claude/skills
+~~~
+
+After restarting, invoke <code>/beyondartist</code> or say <code>Use BeyondArtist Autopilot on [link]</code>. From a local clone, <code>python3 scripts/install.py --host claude</code> does the same.
+
+Claude Code discovers the personal folder <code>~/.claude/skills/beyondartist</code>; repository-scoped skills go in <code>.claude/skills</code>. A fresh session should discover the full directory. Confirm the actual image tool before requesting finished raster work. [Claude Code skills](https://code.claude.com/docs/en/skills).
 
 ## Claude Cowork
 

@@ -1,0 +1,23 @@
+name: Install or tool problem
+description: BeyondArtist would not install, load or run.
+title: "[Install] "
+body:
+  - type: dropdown
+    id: host
+    attributes:
+      label: Where are you using it?
+      options: [Claude Code, Claude Cowork, Codex, ChatGPT, Gemini, Hermes, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What did you run, and what happened?
+      description: Paste the command and the error. Remove private paths or client details.
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: Operating system and Python version
+      placeholder: macOS 15, Python 3.11

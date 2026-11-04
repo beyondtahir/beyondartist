@@ -1,0 +1,22 @@
+name: Share what you made
+description: Show a design made with BeyondArtist, and what worked or did not.
+title: "[Made with BeyondArtist] "
+body:
+  - type: textarea
+    id: work
+    attributes:
+      label: The design
+      description: Attach only work you have the right to share. Do not include other people's private photos or client material.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: What worked, and what did not?
+      description: Real results are welcome if you have them, such as before-and-after click-through. Say where the numbers came from.
+  - type: checkboxes
+    id: permission
+    attributes:
+      label: Showcase
+      options:
+        - label: Beyond Tahir may feature this work in the project gallery, with credit.

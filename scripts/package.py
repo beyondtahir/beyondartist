@@ -5,7 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 import zipfile
-from validate_repo import ROOT, SKILL, public_paths, validate
+from validate_repo import ROOT, SKILL, VERSION, public_paths, validate
 
 
 def main():
@@ -17,8 +17,8 @@ def main():
     destination.mkdir(parents=True, exist_ok=True)
     files = public_paths()
     packages = [
-        ('beyondartist-skill-v1.0.1.zip', [(p, Path('beyondartist') / p.relative_to(SKILL)) for p in files if SKILL in p.parents]),
-        ('beyondartist-repo-v1.0.1.zip', [(p, Path('beyondartist') / p.relative_to(ROOT)) for p in files]),
+        ('beyondartist-skill-v' + VERSION + '.zip', [(p, Path('beyondartist') / p.relative_to(SKILL)) for p in files if SKILL in p.parents]),
+        ('beyondartist-repo-v' + VERSION + '.zip', [(p, Path('beyondartist') / p.relative_to(ROOT)) for p in files]),
     ]
     summaries = []
     for name, members in packages:

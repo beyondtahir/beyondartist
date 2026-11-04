@@ -1,0 +1,19 @@
+{
+  "name": "beyondartist",
+  "owner": {
+    "name": "Beyond Tahir",
+    "url": "https://github.com/beyondtahir"
+  },
+  "plugins": [
+    {
+      "name": "beyondartist",
+      "source": "./",
+      "description": "Art direct and create original thumbnails, carousels and social posts: designer-artist workflow, Design Memory and private project memory.",
+      "version": "1.1.0",
+      "category": "design"
+    }
+  ],
+  "metadata": {
+    "description": "BeyondArtist by Beyond Tahir: AI design skill for original thumbnails, carousels and social posts."
+  }
+}

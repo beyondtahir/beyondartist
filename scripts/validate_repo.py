@@ -10,10 +10,11 @@ import subprocess
 import sys
 from urllib.parse import unquote, urlsplit
 
+VERSION = '1.1.0'
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / 'skills/beyondartist'
-PUBLIC_FILES = {'README.md', 'LICENSE', 'ASSET-LICENSE.md', 'CONTRIBUTING.md', 'AGENTS.md', 'plugin.json', '.gitignore'}
-PUBLIC_DIRS = {'assets', 'docs', 'examples', 'scripts', 'skills', '.github'}
+PUBLIC_FILES = {'README.md', 'LICENSE', 'ASSET-LICENSE.md', 'CONTRIBUTING.md', 'AGENTS.md', 'plugin.json', '.gitignore', 'CHANGELOG.md'}
+PUBLIC_DIRS = {'assets', 'docs', 'examples', 'scripts', 'skills', '.github', '.claude-plugin', 'commands'}
 EXCLUDED_PARTS = {'.git', '__pycache__', '.pytest_cache', 'dist', 'build', 'preview'}
 PRIVATE_PARTS = {'profiles', 'private', 'user-data', '.beyondartist', 'memory'}
 PRIVATE_PATTERNS = [
@@ -44,6 +45,23 @@ def public_paths():
     return sorted(result)
 
 
+def image_size(data, name):
+    if data[:8] == b'\x89PNG\r\n\x1a\n':
+        return struct.unpack('>II', data[16:24])
+    if data[:2] == b'\xff\xd8':
+        position = 2
+        while position + 9 < len(data):
+            if data[position] != 0xFF:
+                position += 1
+                continue
+            marker = data[position + 1]
+            if marker in {0xC0, 0xC1, 0xC2}:
+                height, width = struct.unpack('>HH', data[position + 5:position + 9])
+                return width, height
+            position += 2 + struct.unpack('>H', data[position + 2:position + 4])[0]
+    raise ValueError('Not a readable PNG or JPEG: ' + name)
+
+
 def check_links(paths):
     checked = 0
     for path in paths:
@@ -71,14 +89,21 @@ def validate(run_tests=True):
     paths = public_paths()
     required = ['README.md','plugin.json','docs/getting-started.md','docs/creative-system.md',
                 'docs/memory.md','docs/automation.md','docs/gallery.md','docs/sources.md',
-                'assets/brand/banner.png','assets/brand/beyondartist-logo.png','skills/beyondartist/SKILL.md']
+                'assets/brand/banner.png','assets/brand/beyondartist-logo.png','skills/beyondartist/SKILL.md',
+                'CHANGELOG.md','docs/autopilot.md','docs/no-image-model.md','commands/autopilot.md',
+                'skills/beyondartist/references/autopilot.md','skills/beyondartist/scripts/autopilot.py']
     for name in required:
         if not (ROOT / name).is_file():
             raise ValueError('Missing ' + name)
     plugin = json.loads((ROOT / 'plugin.json').read_text())
     skill_text = (SKILL / 'SKILL.md').read_text()
-    if plugin['name'] != 'beyondartist' or plugin['version'] != '1.0.1' or 'version: "1.0.1"' not in skill_text:
-        raise ValueError('Release metadata must agree at 1.0.1.')
+    claude_plugin = json.loads((ROOT / '.claude-plugin/plugin.json').read_text())
+    marketplace = json.loads((ROOT / '.claude-plugin/marketplace.json').read_text())
+    versions = {plugin['version'], claude_plugin['version'], marketplace['plugins'][0]['version'], VERSION}
+    if plugin['name'] != 'beyondartist' or claude_plugin['name'] != 'beyondartist' or len(versions) != 1 or 'version: "' + VERSION + '"' not in skill_text:
+        raise ValueError('Release metadata must agree at ' + VERSION + '.')
+    if '## ' + VERSION not in (ROOT / 'CHANGELOG.md').read_text():
+        raise ValueError('CHANGELOG.md has no entry for ' + VERSION + '.')
     description = re.search(r'^description: (.+)$', skill_text, re.M)[1]
     if len(description) > 200:
         raise ValueError('Portable skill description exceeds 200 characters.')
@@ -96,23 +121,23 @@ def validate(run_tests=True):
     brands = [row for row in catalog if row['role'] == 'identity']
     if len(works) != 16 or len(brands) != 1 or len({row['id'] for row in catalog}) != 17:
         raise ValueError('Expected 16 selected artworks and one banner.')
-    expected_pngs = {row['file'] for row in catalog} | {'assets/brand/beyondartist-logo.png','assets/brand/beyondartist-icon.png'}
+    expected_pngs = {row['file'] for row in catalog if row['file'].endswith('.png')} | {'assets/brand/beyondartist-logo.png','assets/brand/beyondartist-icon.png'}
     actual_pngs = {p.relative_to(ROOT).as_posix() for p in (ROOT / 'assets').rglob('*.png')}
     if actual_pngs != expected_pngs:
         raise ValueError('Image set differs from the authorized asset catalog.')
     for row in catalog:
         p = ROOT / row['file']
         data = p.read_bytes()
-        if data[:8] != b'\x89PNG\r\n\x1a\n' or hashlib.sha256(data).hexdigest() != row['sha256']:
+        if hashlib.sha256(data).hexdigest() != row['sha256']:
             raise ValueError('Invalid or changed original image: ' + row['file'])
-        width, height = struct.unpack('>II', data[16:24])
+        width, height = image_size(data, row['file'])
         if [width, height] != [row['width'], row['height']]:
             raise ValueError('Image dimensions changed: ' + row['file'])
     checked = check_links(paths)
     subprocess.run([sys.executable, str(SKILL / 'scripts/retrieve_library.py'), '--validate-index'], check=True)
     if run_tests:
         subprocess.run([sys.executable,'-m','unittest','discover','-s',str(SKILL / 'tests'),'-p','test_*.py'], check=True)
-    return {'version':'1.0.1','files':len(paths),'showcase_artworks':16,'identity_banner':1,
+    return {'version':VERSION,'files':len(paths),'showcase_artworks':16,'identity_banner':1,
             'local_links_checked':checked,'private_marker_scan':'passed',
             'shared_index':'valid','tests':'run' if run_tests else 'not-repeated'}
 
