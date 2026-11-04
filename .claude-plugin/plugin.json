@@ -1,0 +1,10 @@
+{
+  "name": "beyondartist",
+  "version": "1.1.0",
+  "description": "Art direct and create original thumbnails, carousels and social posts: designer-artist workflow, Design Memory and private project memory.",
+  "author": { "name": "Beyond Tahir", "url": "https://github.com/beyondtahir" },
+  "homepage": "https://github.com/beyondtahir/beyondartist",
+  "repository": "https://github.com/beyondtahir/beyondartist",
+  "license": "MIT",
+  "keywords": ["design", "thumbnails", "carousels", "art-direction", "creative-ai"]
+}

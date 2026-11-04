@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "beyondartist",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Designer–artist thinking, research and evolving design memory for original visual work.",
   "extensions": {
     "com.openai": {
@@ -16,8 +16,8 @@
         "logo": "./assets/brand/beyondartist-logo.png",
         "screenshots": [
           "./assets/brand/banner.png",
-          "./assets/showcase/google-just-snapped.png",
-          "./assets/showcase/busywork-youre-fired.png"
+          "./assets/showcase/google-just-snapped.jpg",
+          "./assets/showcase/busywork-youre-fired.jpg"
         ],
         "defaultPrompt": [
           "Use BeyondArtist to turn my brief into an original finished design. Ask only for missing essentials, retrieve relevant memory, research, art direct, create and inspect."

@@ -1,7 +1,7 @@
 <!-- Cases are synthetic or anonymized workflow fixtures, not creator-private prompts, reusable user identities or style defaults. -->
 # BeyondArtist reproducible test cases
 
-Version 1.4.0 adds input-specific copy/hook development, serious typography, shared artist hierarchy and unified Design Memory retrieval. Version 1.3.0 added mandatory source-to-decision retrieval and designer–artist handoff. Earlier execution does not validate new behavior. Separate planning evaluation, retrieval tests and actual rendered-art testing in the report.
+Internal build 1.4.0 adds input-specific copy/hook development, serious typography, shared artist hierarchy and unified Design Memory retrieval. Internal build 1.3.0 added mandatory source-to-decision retrieval and designer–artist handoff. Earlier execution does not validate new behavior. Separate planning evaluation, retrieval tests and actual rendered-art testing in the report.
 
 ## Current planning cases
 

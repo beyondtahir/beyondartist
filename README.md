@@ -17,24 +17,36 @@
 
 ## The work comes first
 
-<a href="assets/showcase/google-just-snapped.png"><img src="assets/showcase/previews/google-just-snapped.jpg" alt="Editorial Gemini thumbnail with engraved portraits, bold typography and pink torn paper" width="100%" /></a>
+<a href="assets/showcase/google-just-snapped.jpg"><img src="assets/showcase/previews/google-just-snapped.jpg" alt="Editorial Gemini thumbnail with engraved portraits, bold typography and pink torn paper" width="100%" /></a>
 
 <table>
 <tr>
-<td width="50%"><a href="assets/showcase/ideas-dont-behave.png"><img src="assets/showcase/front/ideas-dont-behave.jpg" alt="Ideas don’t behave — expressive purple and orange mixed-media poster" width="100%" /></a></td>
-<td width="50%"><a href="assets/showcase/lion-crimson.png"><img src="assets/showcase/front/lion-crimson.jpg" alt="Grey lion character in crimson with deliberate linework and expression" width="100%" /></a></td>
+<td width="50%"><a href="assets/showcase/ideas-dont-behave.jpg"><img src="assets/showcase/front/ideas-dont-behave.jpg" alt="Ideas don’t behave — expressive purple and orange mixed-media poster" width="100%" /></a></td>
+<td width="50%"><a href="assets/showcase/lion-crimson.jpg"><img src="assets/showcase/front/lion-crimson.jpg" alt="Grey lion character in crimson with deliberate linework and expression" width="100%" /></a></td>
 </tr>
 <tr>
-<td width="50%"><a href="assets/showcase/busywork-youre-fired.png"><img src="assets/showcase/front/busywork-youre-fired.jpg" alt="Busywork. You’re fired. — lime and plum tactile carousel cover" width="100%" /></a></td>
-<td width="50%"><a href="assets/showcase/there-was-a-time.png"><img src="assets/showcase/front/there-was-a-time.jpg" alt="There was a time — engraved portrait poster with expressive serif typography" width="100%" /></a></td>
+<td width="50%"><a href="assets/showcase/busywork-youre-fired.jpg"><img src="assets/showcase/front/busywork-youre-fired.jpg" alt="Busywork. You’re fired. — lime and plum tactile carousel cover" width="100%" /></a></td>
+<td width="50%"><a href="assets/showcase/there-was-a-time.jpg"><img src="assets/showcase/front/there-was-a-time.jpg" alt="There was a time — engraved portrait poster with expressive serif typography" width="100%" /></a></td>
 </tr>
 <tr>
-<td width="50%"><a href="assets/showcase/bolne-de.png"><img src="assets/showcase/front/bolne-de.jpg" alt="Bolne de — painted freelance pricing meme with expressive lettering" width="100%" /></a></td>
-<td width="50%"><a href="assets/showcase/fast-ideas-slow-human.png"><img src="assets/showcase/front/fast-ideas-slow-human.jpg" alt="Fast ideas. Slow human. — tactile sloth and pencil visual metaphor" width="100%" /></a></td>
+<td width="50%"><a href="assets/showcase/bolne-de.jpg"><img src="assets/showcase/front/bolne-de.jpg" alt="Bolne de — painted freelance pricing meme with expressive lettering" width="100%" /></a></td>
+<td width="50%"><a href="assets/showcase/fast-ideas-slow-human.jpg"><img src="assets/showcase/front/fast-ideas-slow-human.jpg" alt="Fast ideas. Slow human. — tactile sloth and pencil visual metaphor" width="100%" /></a></td>
 </tr>
 </table>
 
 **[Explore all 16 sample artworks →](docs/gallery.md)** · These are selected design examples. The people, characters, colors and claims pictured here do not become your defaults.
+
+## Autopilot: one link, finished designs
+
+~~~text
+/beyondartist:autopilot https://www.youtube.com/watch?v=VIDEO_ID
+~~~
+
+<p align="center"><img src="assets/demo/autopilot-demo.gif" alt="Autopilot demo: one link becomes three concepts, a Feed Test finds a problem, the art is repaired and passes the Quality Gate" width="100%" /></p>
+
+No brief. BeyondArtist reads the video, studies the real competition, makes three concepts, shows them in a **Feed Test** among actual competitor thumbnails, measures the finished pixels with a **Quality Gate**, sets exact text in real fonts, including Urdu, and hands you the files. It remembers what you approve, so the next one starts closer. It never uploads anything, and it never promises clicks.
+
+**[How Autopilot works →](docs/autopilot.md)** · **[No image model? Still works →](docs/no-image-model.md)**
 
 ## AI can make images. Give it a reason to make something worth seeing.
 
@@ -118,7 +130,7 @@ You can also give a detailed structure, reference an approved design or request 
 | Surface | Starting route |
 |---|---|
 | **Codex** | Install the full folder under <code>.agents/skills</code>; invoke <code>$beyondartist</code> |
-| **Claude Code** | Install under <code>.claude/skills</code>; invoke <code>/beyondartist</code> |
+| **Claude Code** | <code>/plugin marketplace add beyondtahir/beyondartist</code>, then <code>/plugin install beyondartist@beyondartist</code> |
 | **Claude Cowork** | Upload the skill ZIP through Customize → Skills; start a fresh session |
 | **ChatGPT Work** | Use an accessible local skill in the desktop app or an enabled plugin route; invoke <code>@beyondartist</code> |
 | **Gemini Apps / CLI** | Upload through Gemini Skills, or link the folder using Gemini CLI |
@@ -135,6 +147,8 @@ The host supplies image generation, browsing, vision, file access and scheduling
 beyondartist/
 ├── README.md                 The story and selected work
 ├── plugin.json               Portable plugin manifest
+├── .claude-plugin/           Claude Code plugin and marketplace manifests
+├── commands/                 Autopilot, thumbnail, carousel and brand setup commands
 ├── skills/beyondartist/      Complete installable skill and shared Design Memory
 ├── assets/                   Approved identity and showcase images only
 ├── docs/                     Process, setup, memory, automation and gallery
@@ -142,11 +156,14 @@ beyondartist/
 └── scripts/                  Local installation, packaging and release checks
 ~~~
 
+[See what changed →](CHANGELOG.md)
+
 The workflow, code and reusable written guidance are MIT licensed. Showcase artwork and BeyondArtist identity are display examples with separate terms in [ASSET-LICENSE.md](ASSET-LICENSE.md). Private photographs, personal prompts, transcripts and runtime profiles are excluded. Read [contribution guidance](CONTRIBUTING.md) before adding reference knowledge.
 
 ## Contributors
 
 - **[Beyond Tahir](https://github.com/beyondtahir)** — Creator and project lead; creative direction, design experience and shared learning.
 - **[Codex](https://github.com/codex)** — OpenAI's AI coding agent; engineering, documentation, packaging and validation in collaboration with Beyond Tahir.
+- **[Claude](https://claude.com/claude-code)** — Anthropic's AI coding agent; Autopilot, Feed Test, Quality Gate, Claude Code plugin and search in collaboration with Beyond Tahir.
 
 <p align="center"><strong>Think deeply. Create boldly. Make the right parts matter.</strong><br />BeyondArtist — by Beyond Tahir</p>
