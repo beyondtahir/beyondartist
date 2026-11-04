@@ -16,6 +16,24 @@ Autopilot does not upload, publish, schedule or message anyone. It delivers file
 
 Never promise clicks or reach. Do not invent results, benchmarks, numbers, endorsements or urgency that the video does not support. The Gate and Feed Test measure the file and its surroundings, not an audience.
 
+## Best available model
+
+BeyondArtist runs on whatever assistant the person already uses. It never hardcodes a model, because models change faster than this file. The judgment comes from the assistant's own model, and the pixels come from the best image tool it can reach.
+
+| Where it runs | Thinking and art direction | Images |
+|---|---|---|
+| ChatGPT Work | The model selected in that session | ChatGPT's current image generation |
+| Claude Work or Claude Code | The Claude model selected in that session | Connected image tools, because Claude itself does not generate photo-style images; otherwise the no-image route |
+| Codex | The model selected in that session | Its image tool if this setup exposes one, then connected tools |
+| Gemini, Hermes, Kimi, OpenClaw or any other agent | The model configured for that agent | Its configured image provider or connected tools |
+
+These rows are guidance for choosing, not a promise that a capability exists. Always confirm with an actual callable tool, then:
+
+1. List what is available now. If a provider can list its models, use that list.
+2. Prefer the newest capable option, and judge it for this brief: identity, references, editing and text can favor a different one.
+3. If the user names a model or a budget, follow it.
+4. Name the model or tool used in the delivery note, and say so if a better one was unavailable.
+
 ## Helper
 
 `scripts/autopilot.py` lives in this skill folder. Call it by its full path and put every output in one job folder outside the skill, such as `./beyondartist-jobs/<video-id>/`.
@@ -94,7 +112,7 @@ Lead with the winning image, then give:
 2. The title pairing, and whether the existing title should change.
 3. Why the other two concepts lost.
 4. Gate verdict and Feed Test observations, each labeled as measured or judged.
-5. What did not run, such as missing OCR, no competitors or no identity reference.
+5. Which image model or tool made the work, and what did not run, such as missing OCR, no competitors or no identity reference.
 6. The files, and how to give feedback.
 
 ## No image model

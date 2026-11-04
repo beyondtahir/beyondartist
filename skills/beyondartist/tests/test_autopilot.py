@@ -1,6 +1,7 @@
 """Autopilot helper tests. They use synthetic images and make no network calls."""
 import json
 from pathlib import Path
+import re
 import shutil
 import sys
 import tempfile
@@ -191,6 +192,19 @@ class Commands(unittest.TestCase):
             self.assertTrue(text.startswith('---\ndescription: '), name)
             self.assertIn('$ARGUMENTS', text)
         self.assertTrue((ROOT / 'references/autopilot.md').is_file())
+
+    def test_routing_hardcodes_no_model(self):
+        repository = ROOT.parents[1]
+        files = [ROOT / 'SKILL.md', ROOT / 'references/autopilot.md', repository / 'README.md', repository / 'docs/autopilot.md',
+                 repository / 'docs/getting-started.md'] + sorted((repository / 'commands').glob('*.md'))
+        pattern = re.compile(r'gpt-image|chatgpt-image|dall-?e|claude-(?:opus|sonnet|haiku|fable)|imagen-|gemini-\d', re.I)
+        for path in files:
+            self.assertIsNone(pattern.search(path.read_text()), path.name)
+
+    def test_autopilot_guide_requires_best_available_and_disclosure(self):
+        guide = (ROOT / 'references/autopilot.md').read_text()
+        self.assertIn('## Best available model', guide)
+        self.assertIn('Which image model or tool made the work', guide)
 
     def test_autopilot_guide_forbids_publishing_and_click_promises(self):
         guide = (ROOT / 'references/autopilot.md').read_text()

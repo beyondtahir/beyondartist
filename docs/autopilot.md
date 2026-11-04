@@ -37,6 +37,10 @@ The Gate measures the file. The Feed Test shows a private comparison. Neither pr
 
 Autopilot never uploads, posts or messages anyone. Image generation uses your own tools and may cost credits; the default budget is three images plus at most two repairs.
 
+## Which AI model does it use?
+
+The best one your assistant has. BeyondArtist has no model of its own and hardcodes none. On ChatGPT Work it uses ChatGPT's current image generation. On Claude and Codex, the session's selected model does the thinking, and the best image tool available in your setup makes the pixels. Hermes, Gemini and other agents use whatever you have configured. Your result note says which one made the work.
+
 ## What you need
 
 | Tool | Required? | Adds |
